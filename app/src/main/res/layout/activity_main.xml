@@ -50,9 +50,11 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etFrom"
+            android:text="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            tools:ignore="HardcodedText" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -7,8 +7,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.core.view.isVisible
 import com.example.rates_conversion.databinding.ActivityMainBinding
-import com.example.rates_conversion.fxdatas.Money_Rates
-import com.example.rates_conversion.fxdatas.RetrofitInstance_FX
+import com.example.rates_conversion.fxdatas.Rates
+import com.example.rates_conversion.fxdatas.RetrofitInstance
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,8 +18,6 @@ import kotlinx.coroutines.withContext
 class MainActivity : AppCompatActivity() {
     private var MainActivity = "MainActivity"
     private lateinit var binding: ActivityMainBinding
-
-    private var arrayList = mutableListOf<Money_Rates>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 val amount = binding.etFrom.text.toString().toDoubleOrNull()
 
                 if (amount != null) {
-                    val response = RetrofitInstance_FX.api.getRates("EUR")
+                    val response = RetrofitInstance.api.getRates("EUR")
 
                     if (response.isSuccessful) {
                         binding.progressBar.isVisible = false
@@ -87,7 +85,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun getRateForCurrency(currency: String, rates: Money_Rates) = when (currency) {
+    private fun getRateForCurrency(currency: String, rates: Rates) = when (currency) {
         "EUR" -> rates.EUR
         "USD" -> rates.USD
         "AUD" -> rates.AUD

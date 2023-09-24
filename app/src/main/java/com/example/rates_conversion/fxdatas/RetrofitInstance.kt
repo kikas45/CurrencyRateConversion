@@ -4,7 +4,7 @@ import com.example.rates_conversion.utils.Constants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitInstance_FX {
+class RetrofitInstance {
 
     companion object {
         private  val retrofit  by lazy {

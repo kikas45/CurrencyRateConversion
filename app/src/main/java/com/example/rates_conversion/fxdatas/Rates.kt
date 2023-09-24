@@ -1,6 +1,6 @@
 package com.example.rates_conversion.fxdatas
 
-data class Money_Rates(
+data class Rates(
     val AUD: Double,
     val CAD: Double,
     val MXN: Double,
